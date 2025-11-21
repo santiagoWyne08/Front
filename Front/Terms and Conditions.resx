@@ -121,8 +121,7 @@
     <value>True</value>
   </metadata>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>
-1. Introduction
+    <value>1. Introduction
 The Cafeteria Food Control System (“the System”) is designed to help manage cafeteria operations by tracking food inventory, monitoring expiry dates, and organizing supply records.
 
 By accessing or using the System, users agree to follow these Terms and Conditions. Failure to comply may result in limited access, account suspension, or other disciplinary actions in accordance with cafeteria policies.

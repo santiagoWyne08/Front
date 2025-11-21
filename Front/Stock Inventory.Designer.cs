@@ -48,6 +48,7 @@
             this.fruitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.condimentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.foodwasteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,7 +107,7 @@
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(149, 38);
             this.btnApply.TabIndex = 68;
-            this.btnApply.Text = "Apply";
+            this.btnApply.Text = "Apply Changes";
             this.btnApply.UseVisualStyleBackColor = false;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
@@ -126,9 +127,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(61, 451);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 23);
+            this.label1.Size = new System.Drawing.Size(83, 23);
             this.label1.TabIndex = 70;
-            this.label1.Text = "Change Quantity:";
+            this.label1.Text = "Quantity:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // menuStrip1
@@ -204,7 +205,8 @@
             this.vegetablesToolStripMenuItem,
             this.fruitsToolStripMenuItem,
             this.dishToolStripMenuItem,
-            this.condimentsToolStripMenuItem});
+            this.condimentsToolStripMenuItem,
+            this.drinksToolStripMenuItem});
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
             this.categoryToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.categoryToolStripMenuItem.Text = "Category";
@@ -250,6 +252,12 @@
             this.condimentsToolStripMenuItem.Name = "condimentsToolStripMenuItem";
             this.condimentsToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.condimentsToolStripMenuItem.Text = "Condiments";
+            // 
+            // drinksToolStripMenuItem
+            // 
+            this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
+            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.drinksToolStripMenuItem.Text = "Drinks";
             // 
             // toolStripMenuItem5
             // 
@@ -335,9 +343,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(61, 380);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 23);
+            this.label2.Size = new System.Drawing.Size(60, 23);
             this.label2.TabIndex = 116;
-            this.label2.Text = "Change Name:";
+            this.label2.Text = "Name:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtName
@@ -356,9 +364,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(427, 380);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 23);
+            this.label3.Size = new System.Drawing.Size(83, 23);
             this.label3.TabIndex = 118;
-            this.label3.Text = "Change Category:";
+            this.label3.Text = "Category:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbCategory
@@ -378,9 +386,9 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(61, 542);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 23);
+            this.label4.Size = new System.Drawing.Size(51, 23);
             this.label4.TabIndex = 120;
-            this.label4.Text = "Change Date:";
+            this.label4.Text = "Date:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtpNewDate
@@ -400,9 +408,9 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(427, 542);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(197, 23);
+            this.label5.Size = new System.Drawing.Size(135, 23);
             this.label5.TabIndex = 155;
-            this.label5.Text = "Change Expiration Date:";
+            this.label5.Text = "Expiration Date:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtpExpirationDate
@@ -487,5 +495,6 @@
         private System.Windows.Forms.DateTimePicker dtpNewDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpExpirationDate;
+        private System.Windows.Forms.ToolStripMenuItem drinksToolStripMenuItem;
     }
 }

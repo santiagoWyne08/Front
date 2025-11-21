@@ -49,6 +49,7 @@
             this.fruitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.condimentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.foodwasteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,6 +88,7 @@
             this.Column2});
             this.dataGridView1.Location = new System.Drawing.Point(12, 150);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(740, 453);
@@ -193,7 +195,8 @@
             this.vegetablesToolStripMenuItem,
             this.fruitsToolStripMenuItem,
             this.dishToolStripMenuItem,
-            this.condimentsToolStripMenuItem});
+            this.condimentsToolStripMenuItem,
+            this.drinksToolStripMenuItem});
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
             this.categoryToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.categoryToolStripMenuItem.Text = "Category";
@@ -239,6 +242,12 @@
             this.condimentsToolStripMenuItem.Name = "condimentsToolStripMenuItem";
             this.condimentsToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.condimentsToolStripMenuItem.Text = "Condiments";
+            // 
+            // drinksToolStripMenuItem
+            // 
+            this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
+            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.drinksToolStripMenuItem.Text = "Drinks";
             // 
             // toolStripMenuItem5
             // 
@@ -327,6 +336,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label8);
             this.Name = "Waste";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Waste";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -367,5 +377,6 @@
         private System.Windows.Forms.ToolStripMenuItem termsAndConditionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem auditTrailStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem drinksToolStripMenuItem;
     }
 }

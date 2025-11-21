@@ -64,6 +64,7 @@
             this.termsAndConditionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auditTrailStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -276,51 +277,52 @@
             this.vegetablesToolStripMenuItem,
             this.fruitsToolStripMenuItem,
             this.dishToolStripMenuItem,
-            this.condimentsToolStripMenuItem});
+            this.condimentsToolStripMenuItem,
+            this.drinksToolStripMenuItem});
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.categoryToolStripMenuItem.Text = "Category";
             // 
             // grainToolStripMenuItem
             // 
             this.grainToolStripMenuItem.Name = "grainToolStripMenuItem";
-            this.grainToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.grainToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.grainToolStripMenuItem.Text = "Grain";
             // 
             // dairyToolStripMenuItem
             // 
             this.dairyToolStripMenuItem.Name = "dairyToolStripMenuItem";
-            this.dairyToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.dairyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dairyToolStripMenuItem.Text = "Dairy";
             // 
             // proteinToolStripMenuItem
             // 
             this.proteinToolStripMenuItem.Name = "proteinToolStripMenuItem";
-            this.proteinToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.proteinToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.proteinToolStripMenuItem.Text = "Protein";
             // 
             // vegetablesToolStripMenuItem
             // 
             this.vegetablesToolStripMenuItem.Name = "vegetablesToolStripMenuItem";
-            this.vegetablesToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.vegetablesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.vegetablesToolStripMenuItem.Text = "Vegetables";
             // 
             // fruitsToolStripMenuItem
             // 
             this.fruitsToolStripMenuItem.Name = "fruitsToolStripMenuItem";
-            this.fruitsToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.fruitsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.fruitsToolStripMenuItem.Text = "Fruits";
             // 
             // dishToolStripMenuItem
             // 
             this.dishToolStripMenuItem.Name = "dishToolStripMenuItem";
-            this.dishToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.dishToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dishToolStripMenuItem.Text = "Dish";
             // 
             // condimentsToolStripMenuItem
             // 
             this.condimentsToolStripMenuItem.Name = "condimentsToolStripMenuItem";
-            this.condimentsToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.condimentsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.condimentsToolStripMenuItem.Text = "Condiments";
             // 
             // toolStripMenuItem5
@@ -399,6 +401,12 @@
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.logOutToolStripMenuItem.Text = "Log Out";
             // 
+            // drinksToolStripMenuItem
+            // 
+            this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
+            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.drinksToolStripMenuItem.Text = "Drinks";
+            // 
             // Set_New_Password
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -467,5 +475,6 @@
         private System.Windows.Forms.ToolStripMenuItem termsAndConditionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem auditTrailStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem drinksToolStripMenuItem;
     }
 }

@@ -11,13 +11,19 @@ namespace Front
     public partial class Verification_Code : Form
     {
         private string userName;
+        private string firstName;
+        private string lastName;
+        private string middleInitial;
         private string verificationCode;
         private string userEmail;
         private string passwordHash;
+        private DateTime codeGeneratedAt;
         private Timer resendTimer;
         private int remainingTime = 30;
         private static readonly Random rng = new Random();
         private bool isPasswordReset = false;
+        private bool isSignUp = false;
+
         public Verification_Code(string username, string code, string hash)
         {
             InitializeComponent();
@@ -26,10 +32,11 @@ namespace Front
             verificationCode = code;
             passwordHash = hash;
             isPasswordReset = true;
+            isSignUp = false;
+            codeGeneratedAt = DateTime.UtcNow;
 
             lblReSend.Cursor = Cursors.Hand;
             lblReSend.Text = "Resend now";
-
             lblReSend.Click += lblReSend_Click;
 
             resendTimer = new Timer();
@@ -39,122 +46,160 @@ namespace Front
             userEmail = GetUserEmail(userName);
         }
 
+        public Verification_Code(string username, string firstname, string lastname, string middle, string email, string hash, string code, bool signup)
+        {
+            InitializeComponent();
+
+            userName = username;
+            firstName = firstname;
+            lastName = lastname;
+            middleInitial = middle;
+            userEmail = email;
+            passwordHash = hash;
+            verificationCode = code;
+            isSignUp = signup;
+            isPasswordReset = false;
+            codeGeneratedAt = DateTime.UtcNow;
+
+            lblReSend.Cursor = Cursors.Hand;
+            lblReSend.Text = "Resend now";
+            lblReSend.Click += lblReSend_Click;
+
+            resendTimer = new Timer();
+            resendTimer.Interval = 1000;
+            resendTimer.Tick += resendTimer_Tick;
+        }
         public Verification_Code()
         {
             InitializeComponent();
         }
-
         private void btnCode_Click(object sender, EventArgs e)
         {
             string enteredCode = txtEnterCode.Text.Trim();
             if (string.IsNullOrEmpty(enteredCode))
             {
-                MessageBox.Show("Please enter the verification code.", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter the verification code.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            TimeSpan elapsed = DateTime.UtcNow - codeGeneratedAt;
+            if (elapsed.TotalMinutes > 5)
+            {
+                MessageBox.Show("Verification code has expired. Please request a new one.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!enteredCode.Equals(verificationCode, StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Incorrect verification code.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             string connectionString = @"Data Source=WYNE;Initial Catalog=foodMonitoringDB;Integrated Security=True";
-            using (SqlConnection conn = new SqlConnection(connectionString))
+
+            if (isSignUp)
             {
-                conn.Open();
-                string checkQuery = "SELECT verificationCode, verificationSetAt FROM Staff WHERE userName = @userName";
-                string currentCode = "";
-                DateTime? verificationSetAt = null;
-
-                using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    checkCmd.Parameters.AddWithValue("@userName", userName);
-                    using (SqlDataReader reader = checkCmd.ExecuteReader())
+                    conn.Open();
+                    using (SqlTransaction tx = conn.BeginTransaction())
                     {
-                        if (reader.Read())
+                        try
                         {
-                            currentCode = reader["verificationCode"] != DBNull.Value ? reader["verificationCode"].ToString() : "";
-                            verificationSetAt = reader["verificationSetAt"] != DBNull.Value ? (DateTime?)reader["verificationSetAt"] : null;
-                        }
-                        else
-                        {
-                            MessageBox.Show("User not found.", " ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                    }
-                }
-                if (verificationSetAt.HasValue && isPasswordReset)
-                {
-                    TimeSpan elapsed = DateTime.UtcNow - verificationSetAt.Value;
-                    if (elapsed.TotalMinutes > 5)
-                    {
-                        MessageBox.Show("Verification code has expired. Please request a new one.", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                }
+                            using (SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM dbo.Staff WHERE Username = @Username OR Email = @Email", conn, tx))
+                            {
+                                checkCmd.Parameters.AddWithValue("@Username", userName);
+                                checkCmd.Parameters.AddWithValue("@Email", userEmail);
+                                int existing = (int)checkCmd.ExecuteScalar();
+                                if (existing > 0)
+                                {
+                                    MessageBox.Show("Username or Email is already taken.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    tx.Rollback();
+                                    return;
+                                }
+                            }
 
-                if (!enteredCode.Equals(currentCode, StringComparison.OrdinalIgnoreCase))
-                {
-                    MessageBox.Show("Incorrect verification code.", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                string updateQuery = "";
-                if (isPasswordReset)
-                {
-                    updateQuery = @"UPDATE Staff 
-                                   SET passwordHash = @passwordHash, 
-                                       isVerified = 1,
-                                       verificationCode = NULL,
-                                       verificationSetAt = NULL
-                                   WHERE userName = @userName";
-                }
-                else
-                {
-                    updateQuery = @"UPDATE Staff SET isVerified = 1 WHERE userName = @userName";
-                }
+                            string insertSql = @"INSERT INTO dbo.Staff 
+                                               (FirstName, MiddleInitial, LastName, Username, Password, Email, isVerified, CreatedAt, IsActive)
+                                               VALUES 
+                                               (@FirstName, @MiddleInitial, @LastName, @Username, @Password, @Email, 1, @CreatedAt, 1)";
 
-                using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
-                {
-                    if (isPasswordReset)
-                    {
-                        updateCmd.Parameters.AddWithValue("@passwordHash", passwordHash);
-                    }
-                    updateCmd.Parameters.AddWithValue("@userName", userName);
-                    updateCmd.ExecuteNonQuery();
-                }
+                            using (SqlCommand insertCmd = new SqlCommand(insertSql, conn, tx))
+                            {
+                                insertCmd.Parameters.AddWithValue("@FirstName", firstName);
+                                insertCmd.Parameters.AddWithValue("@MiddleInitial", string.IsNullOrWhiteSpace(middleInitial) ? (object)DBNull.Value : middleInitial);
+                                insertCmd.Parameters.AddWithValue("@LastName", lastName);
+                                insertCmd.Parameters.AddWithValue("@Username", userName);
+                                insertCmd.Parameters.AddWithValue("@Password", passwordHash);
+                                insertCmd.Parameters.AddWithValue("@Email", userEmail);
+                                insertCmd.Parameters.AddWithValue("@CreatedAt", DateTime.Now);
 
-                string verifyCheck = "SELECT isVerified FROM Staff WHERE userName = @userName";
-                using (SqlCommand verifyCmd = new SqlCommand(verifyCheck, conn))
-                {
-                    verifyCmd.Parameters.AddWithValue("@userName", userName);
-                    bool verified = Convert.ToBoolean(verifyCmd.ExecuteScalar());
+                                int rows = insertCmd.ExecuteNonQuery();
+                                if (rows != 1)
+                                {
+                                    throw new Exception("Failed to create account.");
+                                }
+                            }
 
-                    if (verified)
-                    {
-                        if (isPasswordReset)
-                        {
-                            MessageBox.Show("Password has been reset successfully! Please login with your new password.", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            tx.Commit();
+
+                            MessageBox.Show("Account created successfully! You can now log in.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                             Log_In loginForm = new Log_In();
                             loginForm.Show();
+                            this.Close();
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("Email verified successfully!", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Home homeForm = new Home();
-                            homeForm.Show();
+                            try { tx.Rollback(); } catch { }
+                            MessageBox.Show("Failed to create account: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        this.Close();
                     }
-                    else
+                }
+            }
+
+            else if (isPasswordReset)
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string updateQuery = @"UPDATE dbo.Staff 
+                                          SET Password = @password, 
+                                              isVerified = 1,
+                                              verificationCode = NULL,
+                                              verificationSetAt = NULL
+                                          WHERE Username = @userName";
+
+                    using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
                     {
-                        MessageBox.Show("Verification failed. Please try again later.", " ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        updateCmd.Parameters.AddWithValue("@password", passwordHash);
+                        updateCmd.Parameters.AddWithValue("@userName", userName);
+                        updateCmd.ExecuteNonQuery();
                     }
+
+                    MessageBox.Show("Password has been reset successfully! Please login with your new password.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Log_In loginForm = new Log_In();
+                    loginForm.Show();
+                    this.Close();
                 }
             }
         }
         private void lblReSend_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(userEmail))
-                userEmail = GetUserEmail(userName);
-
+            {
+                if (isPasswordReset)
+                    userEmail = GetUserEmail(userName);
+                else
+                {
+                    MessageBox.Show("Cannot resend code: email not found.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
             if (string.IsNullOrWhiteSpace(userEmail))
             {
-                MessageBox.Show("Cannot resend code: email not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cannot resend code: email not found.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -166,12 +211,14 @@ namespace Front
 
             string newCode = GenerateVerificationCode();
             verificationCode = newCode;
+            codeGeneratedAt = DateTime.UtcNow;
 
             try
             {
                 SendVerificationEmail(userEmail, newCode);
-                UpdateVerificationCodeInDB(userName, newCode);
-                MessageBox.Show("A new verification code has been sent to your email.", "Verification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (isPasswordReset)
+                    UpdateVerificationCodeInDB(userName, newCode);
+                MessageBox.Show("A new verification code has been sent to your email.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -179,7 +226,7 @@ namespace Front
                 lblReSend.Enabled = true;
                 lblReSend.ForeColor = Color.Blue;
                 lblReSend.Text = "Resend now";
-                MessageBox.Show("Failed to resend verification code: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Failed to resend verification code: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void resendTimer_Tick(object sender, EventArgs e)
@@ -207,7 +254,12 @@ namespace Front
                 if (isPasswordReset)
                 {
                     mail.Subject = "Password Reset Verification Code";
-                    mail.Body = $"Your password reset verification code is: {code}\n\nThis code will expire in 5 minutes.\n\nIf you did not request a password reset, please ignore this email.";
+                    mail.Body = $"Your password reset verification code is: {code}\n\nThis code will expire in 5 minutes.";
+                }
+                else if (isSignUp)
+                {
+                    mail.Subject = "Account Verification - Food Monitoring System";
+                    mail.Body = $"Thank you for registering!\n\nYour verification code is: {code}\n\nThis code will expire in 5 minutes.";
                 }
                 else
                 {
@@ -229,7 +281,7 @@ namespace Front
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "UPDATE Staff SET verificationCode = @code, verificationSetAt = @time WHERE userName = @userName";
+                string query = "UPDATE dbo.Staff SET verificationCode = @code, verificationSetAt = @time WHERE Username = @userName";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@code", code);
@@ -246,7 +298,7 @@ namespace Front
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT Email FROM Staff WHERE userName = @userName";
+                string query = "SELECT Email FROM dbo.Staff WHERE Username = @userName";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@userName", userName);

@@ -45,6 +45,7 @@
             this.fruitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.condimentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.foodwasteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,6 +73,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.richTextBox1.Location = new System.Drawing.Point(31, 147);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
@@ -152,7 +154,8 @@
             this.vegetablesToolStripMenuItem,
             this.fruitsToolStripMenuItem,
             this.dishToolStripMenuItem,
-            this.condimentsToolStripMenuItem});
+            this.condimentsToolStripMenuItem,
+            this.drinksToolStripMenuItem});
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
             this.categoryToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.categoryToolStripMenuItem.Text = "Category";
@@ -198,6 +201,12 @@
             this.condimentsToolStripMenuItem.Name = "condimentsToolStripMenuItem";
             this.condimentsToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.condimentsToolStripMenuItem.Text = "Condiments";
+            // 
+            // drinksToolStripMenuItem
+            // 
+            this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
+            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.drinksToolStripMenuItem.Text = "Drinks";
             // 
             // toolStripMenuItem5
             // 
@@ -286,6 +295,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
             this.Name = "Terms_and_Conditions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Terms_and_Conditions";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -322,5 +332,6 @@
         private System.Windows.Forms.ToolStripMenuItem termsAndConditionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem auditTrailStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem drinksToolStripMenuItem;
     }
 }

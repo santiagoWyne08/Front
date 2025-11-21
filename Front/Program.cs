@@ -17,7 +17,7 @@ namespace Front
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Front());
+            Application.Run(new AuditTrail());
         }
     }
 }

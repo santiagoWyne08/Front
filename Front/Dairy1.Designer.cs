@@ -1,6 +1,6 @@
 ﻿namespace Front
 {
-    partial class AuditTrail
+    partial class Dairy1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuditTrail));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dairy1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +43,7 @@
             this.fruitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.condimentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.foodwasteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,11 +54,23 @@
             this.termsAndConditionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auditTrailStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.txtUnit = new System.Windows.Forms.TextBox();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dtpShelf = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtpOpening = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtFood = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dgvAudit = new System.Windows.Forms.DataGridView();
-            this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.dgvDairy = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAudit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDairy)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -81,7 +94,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.menuStrip1.Size = new System.Drawing.Size(764, 50);
-            this.menuStrip1.TabIndex = 113;
+            this.menuStrip1.TabIndex = 194;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem2
@@ -100,13 +113,14 @@
             // 
             // homeToolStripMenuItem
             // 
-            this.homeToolStripMenuItem.BackColor = System.Drawing.Color.SeaGreen;
+            this.homeToolStripMenuItem.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.homeToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.homeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.homeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("homeToolStripMenuItem.Image")));
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(84, 46);
             this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -115,7 +129,7 @@
             // 
             // weweweweToolStripMenuItem
             // 
-            this.weweweweToolStripMenuItem.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.weweweweToolStripMenuItem.BackColor = System.Drawing.Color.SeaGreen;
             this.weweweweToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.categoryToolStripMenuItem});
             this.weweweweToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
@@ -136,50 +150,56 @@
             this.condimentsToolStripMenuItem,
             this.drinksToolStripMenuItem});
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.categoryToolStripMenuItem.Text = "Category";
             // 
             // grainToolStripMenuItem
             // 
             this.grainToolStripMenuItem.Name = "grainToolStripMenuItem";
-            this.grainToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.grainToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.grainToolStripMenuItem.Text = "Grain";
             // 
             // dairyToolStripMenuItem
             // 
             this.dairyToolStripMenuItem.Name = "dairyToolStripMenuItem";
-            this.dairyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dairyToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.dairyToolStripMenuItem.Text = "Dairy";
             // 
             // proteinToolStripMenuItem
             // 
             this.proteinToolStripMenuItem.Name = "proteinToolStripMenuItem";
-            this.proteinToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.proteinToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.proteinToolStripMenuItem.Text = "Protein";
             // 
             // vegetablesToolStripMenuItem
             // 
             this.vegetablesToolStripMenuItem.Name = "vegetablesToolStripMenuItem";
-            this.vegetablesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.vegetablesToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.vegetablesToolStripMenuItem.Text = "Vegetables";
             // 
             // fruitsToolStripMenuItem
             // 
             this.fruitsToolStripMenuItem.Name = "fruitsToolStripMenuItem";
-            this.fruitsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fruitsToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.fruitsToolStripMenuItem.Text = "Fruits";
             // 
             // dishToolStripMenuItem
             // 
             this.dishToolStripMenuItem.Name = "dishToolStripMenuItem";
-            this.dishToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dishToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.dishToolStripMenuItem.Text = "Dish";
             // 
             // condimentsToolStripMenuItem
             // 
             this.condimentsToolStripMenuItem.Name = "condimentsToolStripMenuItem";
-            this.condimentsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.condimentsToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.condimentsToolStripMenuItem.Text = "Condiments";
+            // 
+            // drinksToolStripMenuItem
+            // 
+            this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
+            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.drinksToolStripMenuItem.Text = "Drinks";
             // 
             // toolStripMenuItem5
             // 
@@ -195,6 +215,7 @@
             this.foodwasteToolStripMenuItem1.Name = "foodwasteToolStripMenuItem1";
             this.foodwasteToolStripMenuItem1.Size = new System.Drawing.Size(121, 46);
             this.foodwasteToolStripMenuItem1.Text = "Food Waste";
+            this.foodwasteToolStripMenuItem1.Click += new System.EventHandler(this.foodwasteToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem7
             // 
@@ -209,6 +230,7 @@
             this.stockInventoryToolStripMenuItem.Name = "stockInventoryToolStripMenuItem";
             this.stockInventoryToolStripMenuItem.Size = new System.Drawing.Size(144, 46);
             this.stockInventoryToolStripMenuItem.Text = "Stock Inventory";
+            this.stockInventoryToolStripMenuItem.Click += new System.EventHandler(this.stockInventoryToolStripMenuItem_Click);
             // 
             // toolStripMenuItem8
             // 
@@ -235,6 +257,7 @@
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
             this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // termsAndConditionsToolStripMenuItem
             // 
@@ -242,6 +265,7 @@
             this.termsAndConditionsToolStripMenuItem.Name = "termsAndConditionsToolStripMenuItem";
             this.termsAndConditionsToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.termsAndConditionsToolStripMenuItem.Text = "Terms and Conditions";
+            this.termsAndConditionsToolStripMenuItem.Click += new System.EventHandler(this.termsAndConditionsToolStripMenuItem_Click);
             // 
             // auditTrailStripMenuItem
             // 
@@ -249,6 +273,7 @@
             this.auditTrailStripMenuItem.Name = "auditTrailStripMenuItem";
             this.auditTrailStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.auditTrailStripMenuItem.Text = "History";
+            this.auditTrailStripMenuItem.Click += new System.EventHandler(this.auditTrailStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
@@ -256,55 +281,208 @@
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtQuantity.ForeColor = System.Drawing.Color.Black;
+            this.txtQuantity.Location = new System.Drawing.Point(81, 594);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(279, 26);
+            this.txtQuantity.TabIndex = 193;
+            // 
+            // txtUnit
+            // 
+            this.txtUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtUnit.ForeColor = System.Drawing.Color.Black;
+            this.txtUnit.Location = new System.Drawing.Point(411, 461);
+            this.txtUnit.Name = "txtUnit";
+            this.txtUnit.Size = new System.Drawing.Size(279, 26);
+            this.txtUnit.TabIndex = 192;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BackColor = System.Drawing.Color.White;
+            this.btnRemove.ForeColor = System.Drawing.Color.Black;
+            this.btnRemove.Location = new System.Drawing.Point(246, 644);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(125, 32);
+            this.btnRemove.TabIndex = 191;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click_1);
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.BackColor = System.Drawing.Color.White;
+            this.btnInsert.ForeColor = System.Drawing.Color.Black;
+            this.btnInsert.Location = new System.Drawing.Point(399, 644);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(125, 32);
+            this.btnInsert.TabIndex = 190;
+            this.btnInsert.Text = "Insert";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label8.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(79, 568);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 23);
+            this.label8.TabIndex = 189;
+            this.label8.Text = "Quantity*";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dtpShelf
+            // 
+            this.dtpShelf.Location = new System.Drawing.Point(411, 528);
+            this.dtpShelf.Name = "dtpShelf";
+            this.dtpShelf.Size = new System.Drawing.Size(280, 22);
+            this.dtpShelf.TabIndex = 188;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(407, 503);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(200, 23);
+            this.label7.TabIndex = 187;
+            this.label7.Text = "Best Before/Expiry Date*";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dtpOpening
+            // 
+            this.dtpOpening.Location = new System.Drawing.Point(83, 530);
+            this.dtpOpening.Name = "dtpOpening";
+            this.dtpOpening.Size = new System.Drawing.Size(278, 22);
+            this.dtpOpening.TabIndex = 186;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(78, 503);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 23);
+            this.label6.TabIndex = 185;
+            this.label6.Text = "Date Opened";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(408, 435);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(181, 23);
+            this.label3.TabIndex = 184;
+            this.label3.Text = "Unit of Measurement*";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtFood
+            // 
+            this.txtFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtFood.ForeColor = System.Drawing.Color.Black;
+            this.txtFood.Location = new System.Drawing.Point(81, 461);
+            this.txtFood.Name = "txtFood";
+            this.txtFood.Size = new System.Drawing.Size(279, 26);
+            this.txtFood.TabIndex = 183;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 15F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(314, 105);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(78, 435);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 34);
-            this.label5.TabIndex = 118;
-            this.label5.Text = "Audit Logs";
+            this.label5.Size = new System.Drawing.Size(103, 23);
+            this.label5.TabIndex = 182;
+            this.label5.Text = "Item Name*";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dgvAudit
+            // txtSearch
             // 
-            this.dgvAudit.AllowUserToAddRows = false;
-            this.dgvAudit.AllowUserToDeleteRows = false;
-            this.dgvAudit.AllowUserToResizeRows = false;
-            this.dgvAudit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAudit.BackgroundColor = System.Drawing.Color.White;
-            this.dgvAudit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAudit.Location = new System.Drawing.Point(27, 169);
-            this.dgvAudit.MultiSelect = false;
-            this.dgvAudit.Name = "dgvAudit";
-            this.dgvAudit.ReadOnly = true;
-            this.dgvAudit.RowHeadersWidth = 51;
-            this.dgvAudit.RowTemplate.Height = 24;
-            this.dgvAudit.Size = new System.Drawing.Size(709, 483);
-            this.dgvAudit.TabIndex = 125;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtSearch.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtSearch.Location = new System.Drawing.Point(258, 96);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(241, 29);
+            this.txtSearch.TabIndex = 181;
             // 
-            // drinksToolStripMenuItem
+            // dgvDairy
             // 
-            this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
-            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.drinksToolStripMenuItem.Text = "Drinks";
+            this.dgvDairy.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvDairy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDairy.Location = new System.Drawing.Point(48, 261);
+            this.dgvDairy.Name = "dgvDairy";
+            this.dgvDairy.ReadOnly = true;
+            this.dgvDairy.RowHeadersWidth = 51;
+            this.dgvDairy.RowTemplate.Height = 24;
+            this.dgvDairy.Size = new System.Drawing.Size(657, 161);
+            this.dgvDairy.TabIndex = 180;
             // 
-            // AuditTrail
+            // label2
+            // 
+            this.label2.AllowDrop = true;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 15F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(338, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 34);
+            this.label2.TabIndex = 179;
+            this.label2.Text = "Dairy";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Dairy1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(764, 714);
-            this.Controls.Add(this.dgvAudit);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "AuditTrail";
-            this.Text = "History";
-            this.Load += new System.EventHandler(this.AuditTrail_Load);
+            this.Controls.Add(this.txtQuantity);
+            this.Controls.Add(this.txtUnit);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnInsert);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dtpShelf);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dtpOpening);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtFood);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.dgvDairy);
+            this.Controls.Add(this.label2);
+            this.Name = "Dairy1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Dairy1";
+            this.Load += new System.EventHandler(this.Dairy_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAudit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDairy)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,6 +502,9 @@
         private System.Windows.Forms.ToolStripMenuItem proteinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vegetablesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fruitsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem condimentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem drinksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem foodwasteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
@@ -334,10 +515,20 @@
         private System.Windows.Forms.ToolStripMenuItem termsAndConditionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem auditTrailStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.TextBox txtUnit;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dtpShelf;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dtpOpening;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtFood;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dgvAudit;
-        private System.Windows.Forms.ToolStripMenuItem dishToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem condimentsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem drinksToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.DataGridView dgvDairy;
+        private System.Windows.Forms.Label label2;
     }
 }

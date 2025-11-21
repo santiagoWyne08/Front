@@ -74,17 +74,23 @@
     <Compile Include="Condiments.Designer.cs">
       <DependentUpon>Condiments.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dairy.cs">
+    <Compile Include="Dairy1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dairy.Designer.cs">
-      <DependentUpon>Dairy.cs</DependentUpon>
+    <Compile Include="Dairy1.Designer.cs">
+      <DependentUpon>Dairy1.cs</DependentUpon>
     </Compile>
     <Compile Include="Dish.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dish.Designer.cs">
       <DependentUpon>Dish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Drinks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drinks.Designer.cs">
+      <DependentUpon>Drinks.cs</DependentUpon>
     </Compile>
     <Compile Include="ForgotPassword.cs">
       <SubType>Form</SubType>
@@ -137,11 +143,11 @@
     <Compile Include="Set New Password.Designer.cs">
       <DependentUpon>Set New Password.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sign Up.cs">
+    <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sign Up.Designer.cs">
-      <DependentUpon>Sign Up.cs</DependentUpon>
+    <Compile Include="SignUp.Designer.cs">
+      <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
     <Compile Include="Stock Inventory.cs">
       <SubType>Form</SubType>
@@ -179,11 +185,14 @@
     <EmbeddedResource Include="Condiments.resx">
       <DependentUpon>Condiments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dairy.resx">
-      <DependentUpon>Dairy.cs</DependentUpon>
+    <EmbeddedResource Include="Dairy1.resx">
+      <DependentUpon>Dairy1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dish.resx">
       <DependentUpon>Dish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drinks.resx">
+      <DependentUpon>Drinks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotPassword.resx">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
@@ -218,8 +227,8 @@
     <EmbeddedResource Include="Set New Password.resx">
       <DependentUpon>Set New Password.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sign Up.resx">
-      <DependentUpon>Sign Up.cs</DependentUpon>
+    <EmbeddedResource Include="SignUp.resx">
+      <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stock Inventory.resx">
       <DependentUpon>Stock Inventory.cs</DependentUpon>

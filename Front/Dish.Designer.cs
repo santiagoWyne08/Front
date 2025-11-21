@@ -43,6 +43,7 @@
             this.fruitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.condimentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.foodwasteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
@@ -145,7 +146,8 @@
             this.vegetablesToolStripMenuItem,
             this.fruitsToolStripMenuItem,
             this.dishToolStripMenuItem,
-            this.condimentsToolStripMenuItem});
+            this.condimentsToolStripMenuItem,
+            this.drinksToolStripMenuItem});
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
             this.categoryToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.categoryToolStripMenuItem.Text = "Category";
@@ -191,6 +193,12 @@
             this.condimentsToolStripMenuItem.Name = "condimentsToolStripMenuItem";
             this.condimentsToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.condimentsToolStripMenuItem.Text = "Condiments";
+            // 
+            // drinksToolStripMenuItem
+            // 
+            this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
+            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.drinksToolStripMenuItem.Text = "Drinks";
             // 
             // toolStripMenuItem5
             // 
@@ -285,6 +293,7 @@
             this.dgvGrain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrain.Location = new System.Drawing.Point(50, 273);
             this.dgvGrain.Name = "dgvGrain";
+            this.dgvGrain.ReadOnly = true;
             this.dgvGrain.RowHeadersWidth = 51;
             this.dgvGrain.RowTemplate.Height = 24;
             this.dgvGrain.Size = new System.Drawing.Size(657, 161);
@@ -297,7 +306,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 15F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(351, 53);
+            this.label2.Location = new System.Drawing.Point(346, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 34);
             this.label2.TabIndex = 134;
@@ -460,6 +469,7 @@
             this.Controls.Add(this.dgvGrain);
             this.Controls.Add(this.label2);
             this.Name = "Dish";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dish";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -509,5 +519,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem dishToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem condimentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem drinksToolStripMenuItem;
     }
 }

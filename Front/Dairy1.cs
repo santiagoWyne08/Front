@@ -11,14 +11,11 @@ using System.Windows.Forms;
 
 namespace Front
 {
-    public partial class Grain : Form
+    public partial class Dairy1 : Form
     {
-        public string LoggedInStaffID
-        {
-            get; set;
-        }
+        public string LoggedInStaffID { get; set; }
         string connectionString = @"Data Source=WYNE;Initial Catalog=foodMonitoringDB;Integrated Security=True";
-        public Grain()
+        public Dairy1()
         {
             InitializeComponent();
             txtSearch.Text = "Search";
@@ -27,40 +24,39 @@ namespace Front
             txtSearch.LostFocus += AddText;
             txtSearch.TextChanged += txtSearch_TextChanged;
 
-            this.Shown += (s, e) => LoadGrainItems();
+            this.Shown += (s, e) => LoadDairyItems();
         }
-        private void Grain_Load(object sender, EventArgs e)
+        private void Dairy_Load(object sender, EventArgs e)
         {
-            LoadGrainItems();
+            LoadDairyItems();
         }
-        public void LoadGrainItems()
+        public void LoadDairyItems()
         {
-            dgvGrain.AutoGenerateColumns = true;
+            dgvDairy.AutoGenerateColumns = true;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT ItemID, ItemName, UnitOfMeasurement, Quantity, DateOpened, BestBeforeExpiryDate FROM dbo.Grain";
+                string query = "SELECT ItemID, ItemName, UnitOfMeasurement, Quantity, DateOpened, BestBeforeExpiryDate FROM dbo.Dairy";
                 SqlDataAdapter adapt = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
-                dgvGrain.DataSource = dt;
+                dgvDairy.DataSource = dt;
             }
 
-            if (dgvGrain.Columns.Contains("ItemID"))
-                dgvGrain.Columns["ItemID"].HeaderText = "Item ID";
-            if (dgvGrain.Columns.Contains("ItemName"))
-                dgvGrain.Columns["ItemName"].HeaderText = "Item Name";
-            if (dgvGrain.Columns.Contains("UnitOfMeasurement"))
-                dgvGrain.Columns["UnitOfMeasurement"].HeaderText = "Unit of Measurement";
-            if (dgvGrain.Columns.Contains("Quantity"))
-                dgvGrain.Columns["Quantity"].HeaderText = "Quantity";
-            if (dgvGrain.Columns.Contains("DateOpened"))
-                dgvGrain.Columns["DateOpened"].HeaderText = "Date Opened";
-            if (dgvGrain.Columns.Contains("BestBeforeExpiryDate"))
-                dgvGrain.Columns["BestBeforeExpiryDate"].HeaderText = "Best Before/Expiry Date";
+            if (dgvDairy.Columns.Contains("ItemID"))
+                dgvDairy.Columns["ItemID"].HeaderText = "Item ID";
+            if (dgvDairy.Columns.Contains("ItemName"))
+                dgvDairy.Columns["ItemName"].HeaderText = "Item Name";
+            if (dgvDairy.Columns.Contains("UnitOfMeasurement"))
+                dgvDairy.Columns["UnitOfMeasurement"].HeaderText = "Unit of Measurement";
+            if (dgvDairy.Columns.Contains("Quantity"))
+                dgvDairy.Columns["Quantity"].HeaderText = "Quantity";
+            if (dgvDairy.Columns.Contains("DateOpened"))
+                dgvDairy.Columns["DateOpened"].HeaderText = "Date Opened";
+            if (dgvDairy.Columns.Contains("BestBeforeExpiryDate"))
+                dgvDairy.Columns["BestBeforeExpiryDate"].HeaderText = "Best Before/Expiry Date";
 
-            dgvGrain.Columns["ItemID"].Visible = false;
+            dgvDairy.Columns["ItemID"].Visible = false;
         }
-
         private void ClearFields()
         {
             txtFood.Clear();
@@ -69,7 +65,6 @@ namespace Front
             dtpOpening.Value = DateTime.Now;
             dtpShelf.Value = DateTime.Now;
         }
-
         private void RemoveText(Object sender, EventArgs e)
         {
             if (txtSearch.Text == "Search")
@@ -78,7 +73,6 @@ namespace Front
                 txtSearch.ForeColor = Color.Black;
             }
         }
-
         private void AddText(Object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtSearch.Text))
@@ -87,7 +81,6 @@ namespace Front
                 txtSearch.ForeColor = Color.Gray;
             }
         }
-
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             if (!txtSearch.Focused)
@@ -95,49 +88,46 @@ namespace Front
 
             if (txtSearch.Text == "Search" || string.IsNullOrWhiteSpace(txtSearch.Text))
             {
-                LoadGrainItems();
+                LoadDairyItems();
                 return;
             }
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = "SELECT ItemID, ItemName, UnitOfMeasurement, Quantity, DateOpened, BestBeforeExpiryDate " +
-                               "FROM dbo.Grain WHERE ItemName LIKE @search";
+                               "FROM dbo.Dairy WHERE ItemName LIKE @search";
                 SqlDataAdapter adapt = new SqlDataAdapter(query, conn);
                 adapt.SelectCommand.Parameters.AddWithValue("@search", "%" + txtSearch.Text + "%");
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
 
-                dgvGrain.AutoGenerateColumns = true;
-                dgvGrain.DataSource = dt;
+                dgvDairy.AutoGenerateColumns = true;
+                dgvDairy.DataSource = dt;
 
-                if (dgvGrain.Columns.Contains("ItemID"))
-                    dgvGrain.Columns["ItemID"].HeaderText = "Item ID";
-                if (dgvGrain.Columns.Contains("ItemName"))
-                    dgvGrain.Columns["ItemName"].HeaderText = "Item Name";
-                if (dgvGrain.Columns.Contains("UnitOfMeasurement"))
-                    dgvGrain.Columns["UnitOfMeasurement"].HeaderText = "Unit of Measurement";
-                if (dgvGrain.Columns.Contains("Quantity"))
-                    dgvGrain.Columns["Quantity"].HeaderText = "Quantity";
-                if (dgvGrain.Columns.Contains("DateOpened"))
-                    dgvGrain.Columns["DateOpened"].HeaderText = "Date Opened";
-                if (dgvGrain.Columns.Contains("BestBeforeExpiryDate"))
-                    dgvGrain.Columns["BestBeforeExpiryDate"].HeaderText = "Best Before/Expiry Date";
+                if (dgvDairy.Columns.Contains("ItemID"))
+                    dgvDairy.Columns["ItemID"].HeaderText = "Item ID";
+                if (dgvDairy.Columns.Contains("ItemName"))
+                    dgvDairy.Columns["ItemName"].HeaderText = "Item Name";
+                if (dgvDairy.Columns.Contains("UnitOfMeasurement"))
+                    dgvDairy.Columns["UnitOfMeasurement"].HeaderText = "Unit of Measurement";
+                if (dgvDairy.Columns.Contains("Quantity"))
+                    dgvDairy.Columns["Quantity"].HeaderText = "Quantity";
+                if (dgvDairy.Columns.Contains("DateOpened"))
+                    dgvDairy.Columns["DateOpened"].HeaderText = "Date Opened";
+                if (dgvDairy.Columns.Contains("BestBeforeExpiryDate"))
+                    dgvDairy.Columns["BestBeforeExpiryDate"].HeaderText = "Best Before/Expiry Date";
 
-                dgvGrain.Columns["ItemID"].Visible = false;
+                dgvDairy.Columns["ItemID"].Visible = false;
             }
         }
-
-        private void btnInsert_Click_1(object sender, EventArgs e)
+        private void btnInsert_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtFood.Text) ||
-                string.IsNullOrWhiteSpace(txtUnit.Text) ||
-                string.IsNullOrWhiteSpace(txtQuantity.Text))
+       string.IsNullOrWhiteSpace(txtUnit.Text) ||
+       string.IsNullOrWhiteSpace(txtQuantity.Text))
             {
                 MessageBox.Show("Please fill in all required fields", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             try
             {
                 decimal quantity = decimal.Parse(txtQuantity.Text);
@@ -149,12 +139,11 @@ namespace Front
 
                     try
                     {
-                        // Insert into Grain table
-                        string insertGrain = @"
-                            INSERT INTO dbo.Grain (ItemName, UnitOfMeasurement, Quantity, DateOpened, BestBeforeExpiryDate)
-                            VALUES (@ItemName, @UnitOfMeasurement, @Quantity, @DateOpened, @BestBeforeExpiryDate)";
+                        string insertDairy = @"
+                    INSERT INTO dbo.Dairy (ItemName, UnitOfMeasurement, Quantity, DateOpened, BestBeforeExpiryDate)
+                    VALUES (@ItemName, @UnitOfMeasurement, @Quantity, @DateOpened, @BestBeforeExpiryDate)";
 
-                        SqlCommand cmd1 = new SqlCommand(insertGrain, conn, tr);
+                        SqlCommand cmd1 = new SqlCommand(insertDairy, conn, tr);
                         cmd1.Parameters.AddWithValue("@ItemName", txtFood.Text.Trim());
                         cmd1.Parameters.AddWithValue("@UnitOfMeasurement", txtUnit.Text.Trim());
                         cmd1.Parameters.AddWithValue("@Quantity", quantity);
@@ -162,40 +151,37 @@ namespace Front
                         cmd1.Parameters.AddWithValue("@BestBeforeExpiryDate", dtpShelf.Value.Date);
                         cmd1.ExecuteNonQuery();
 
-                        // Insert into Stock Inventory
                         string insertStock = @"
-                            INSERT INTO dbo.StockInventory (ItemName, Category, Quantity, DateAdded, ExpirationDate)
-                            VALUES (@ItemName, @Category, @Quantity, @DateAdded, @ExpirationDate)";
+                    INSERT INTO dbo.StockInventory (ItemName, Category, Quantity, DateAdded, ExpirationDate)
+                    VALUES (@ItemName, @Category, @Quantity, @DateAdded, @ExpirationDate)";
 
                         SqlCommand cmd2 = new SqlCommand(insertStock, conn, tr);
                         cmd2.Parameters.AddWithValue("@ItemName", txtFood.Text.Trim());
-                        cmd2.Parameters.AddWithValue("@Category", "Grain");
+                        cmd2.Parameters.AddWithValue("@Category", "Dairy"); 
                         cmd2.Parameters.AddWithValue("@Quantity", quantity);
                         cmd2.Parameters.AddWithValue("@DateAdded", dtpOpening.Value.Date);
                         cmd2.Parameters.AddWithValue("@ExpirationDate", dtpShelf.Value.Date);
                         cmd2.ExecuteNonQuery();
-
-                        // Log to Audit Trail
+                      
                         if (!string.IsNullOrWhiteSpace(LoggedInStaffID) && int.TryParse(LoggedInStaffID, out int staffIDInt))
                         {
                             string insertAudit = @"
-                                INSERT INTO dbo.auditLogs (staffID, actionDateTime, actionDone) 
-                                VALUES (@staffID, @actionDateTime, @actionDone)";
+                        INSERT INTO dbo.auditLogs (staffID, actionDateTime, actionDone) 
+                        VALUES (@staffID, @actionDateTime, @actionDone)";
 
                             SqlCommand cmdAudit = new SqlCommand(insertAudit, conn, tr);
                             cmdAudit.Parameters.AddWithValue("@staffID", staffIDInt);
                             cmdAudit.Parameters.AddWithValue("@actionDateTime", DateTime.Now);
-                            cmdAudit.Parameters.AddWithValue("@actionDone", $"Added '{txtFood.Text.Trim()}' to Grain and Stock Inventory");
+                            cmdAudit.Parameters.AddWithValue("@actionDone", $"Added '{txtFood.Text.Trim()}' to Dairy and Stock Inventory");
                             cmdAudit.ExecuteNonQuery();
                         }
 
                         tr.Commit();
 
-                        MessageBox.Show("Item added to Grain successfully!", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Item added to Dairy successfully!", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ClearFields();
-                        LoadGrainItems();
+                        LoadDairyItems();
 
-                        // Refresh Stock Inventory and Audit Trail forms if open
                         foreach (Form form in Application.OpenForms)
                         {
                             if (form is Stock_Inventory stock)
@@ -220,20 +206,18 @@ namespace Front
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnRemove_Click_1(object sender, EventArgs e)
         {
             DataGridViewRow sr = null;
-            if (dgvGrain.SelectedRows.Count > 0)
-                sr = dgvGrain.SelectedRows[0];
-            else if (dgvGrain.CurrentRow != null)
-                sr = dgvGrain.CurrentRow;
+            if (dgvDairy.SelectedRows.Count > 0)
+                sr = dgvDairy.SelectedRows[0];
+            else if (dgvDairy.CurrentRow != null)
+                sr = dgvDairy.CurrentRow;
             else
             {
                 MessageBox.Show("Please select an item to remove", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             object idObj = sr.Cells["ItemID"]?.Value;
             object nameObj = sr.Cells["ItemName"]?.Value ?? sr.Cells["Item Name"]?.Value;
 
@@ -256,7 +240,6 @@ namespace Front
 
             string itemName = nameObj?.ToString() ?? "(unknown)";
             DateTime now = DateTime.Now;
-
             DialogResult confirm = MessageBox.Show(
                 $"Are you sure you want to remove '{itemName}'?",
                 " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -271,15 +254,12 @@ namespace Front
                 {
                     try
                     {
-                        // Delete from Grain table
-                        string deleteGrain = "DELETE FROM dbo.Grain WHERE ItemID = @itemID";
-                        using (SqlCommand cmd = new SqlCommand(deleteGrain, conn, transac))
+                        string deleteDairy = "DELETE FROM dbo.Dairy WHERE ItemID = @itemID";
+                        using (SqlCommand cmd = new SqlCommand(deleteDairy, conn, transac))
                         {
                             cmd.Parameters.AddWithValue("@itemID", itemID);
                             cmd.ExecuteNonQuery();
                         }
-
-                        // Log to Audit Trail
                         if (!string.IsNullOrWhiteSpace(LoggedInStaffID) && int.TryParse(LoggedInStaffID, out int staffIDInt))
                         {
                             string insertAudit = @"
@@ -290,11 +270,10 @@ namespace Front
                             {
                                 cmd1.Parameters.AddWithValue("@staffID", staffIDInt);
                                 cmd1.Parameters.AddWithValue("@actionDateTime", now);
-                                cmd1.Parameters.AddWithValue("@actionDone", $"Removed '{itemName}' from Grain Table");
+                                cmd1.Parameters.AddWithValue("@actionDone", $"Removed '{itemName}' from Dairy Table");
                                 cmd1.ExecuteNonQuery();
                             }
                         }
-
                         transac.Commit();
                     }
                     catch (Exception ex)
@@ -305,10 +284,8 @@ namespace Front
                     }
                 }
             }
+            LoadDairyItems();
 
-            LoadGrainItems();
-
-            // Refresh Audit Trail if open
             foreach (Form form in Application.OpenForms)
             {
                 if (form is AuditTrail audit)
@@ -317,7 +294,8 @@ namespace Front
 
             MessageBox.Show("Item removed and logged successfully", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        private void homeToolStripMenuItem_Click_1(object sender, EventArgs e)
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Home h = new Home();
             h.LoggedInStaffID = this.LoggedInStaffID;
@@ -325,12 +303,12 @@ namespace Front
             this.Close();
         }
 
-        private void foodwasteToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        private void foodwasteToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+   
         }
 
-        private void stockInventoryToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void stockInventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Stock_Inventory s = new Stock_Inventory();
             s.LoggedInStaffID = this.LoggedInStaffID;
@@ -338,7 +316,7 @@ namespace Front
             this.Close();
         }
 
-        private void changePasswordToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Set_New_Password snp = new Set_New_Password();
             snp.LoggedInStaffID = this.LoggedInStaffID;
@@ -346,21 +324,21 @@ namespace Front
             this.Close();
         }
 
-        private void termsAndConditionsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void termsAndConditionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Terms_and_Conditions tc = new Terms_and_Conditions();
             tc.Show();
             this.Close();
         }
 
-        private void auditTrailStripMenuItem_Click_1(object sender, EventArgs e)
+        private void auditTrailStripMenuItem_Click(object sender, EventArgs e)
         {
             AuditTrail at = new AuditTrail();
             at.Show();
             this.Close();
         }
 
-        private void logOutToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
                "Are you sure you want to log out?",

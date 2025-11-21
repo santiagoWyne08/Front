@@ -29,7 +29,7 @@ namespace Front
         }
         private void dairyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Dairy d = new Dairy();
+            Dairy1 d = new Dairy1();
             d.LoggedInStaffID = this.LoggedInStaffID;
             d.Show();
             this.Close();

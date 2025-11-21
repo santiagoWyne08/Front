@@ -51,7 +51,7 @@ namespace Front
 
             if (string.IsNullOrWhiteSpace(userInput) || string.IsNullOrWhiteSpace(passWord))
             {
-                MessageBox.Show("Please enter both the username and password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show("Please enter both the username and password", "", MessageBoxButtons.OK, MessageBoxIcon.None);
                 return;
             }
 
@@ -82,7 +82,7 @@ namespace Front
 
                             if (!isVerified)
                             {
-                                MessageBox.Show("Please verify your email before logging in.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Please verify your email before logging in.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 reader.Close();
                                 conn.Close();
                                 return;
@@ -100,7 +100,7 @@ namespace Front
                                     updateCmd.ExecuteNonQuery();
                                 }
 
-                                MessageBox.Show("Login successful!", " ", MessageBoxButtons.OK, MessageBoxIcon.None);
+                                MessageBox.Show("Login successful!", "", MessageBoxButtons.OK, MessageBoxIcon.None);
 
                                 SessionData.StaffID = staffID;
 
@@ -111,12 +111,12 @@ namespace Front
                             }
                             else
                             {
-                                MessageBox.Show("Invalid username or password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.None);
+                                MessageBox.Show("Invalid username or password", "", MessageBoxButtons.OK, MessageBoxIcon.None);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Account not found", " ", MessageBoxButtons.OK, MessageBoxIcon.None);
+                            MessageBox.Show("Account not found", "", MessageBoxButtons.OK, MessageBoxIcon.None);
                         }
                     }
                 }
