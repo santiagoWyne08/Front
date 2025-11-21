@@ -476,9 +476,10 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dgvDairy);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Dairy1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dairy1";
+            this.Text = "Waste Wise";
             this.Load += new System.EventHandler(this.Dairy_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

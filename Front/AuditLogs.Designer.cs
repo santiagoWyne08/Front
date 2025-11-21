@@ -1,6 +1,6 @@
 ﻿namespace Front
 {
-    partial class Condiments
+    partial class AuditLogs
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Condiments));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuditLogs));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,21 +54,8 @@
             this.termsAndConditionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auditTrailStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvGrain = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.txtUnit = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dtpShelf = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dtpOpening = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtFood = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.btnInsert = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrain)).BeginInit();
             this.SuspendLayout();
@@ -94,7 +81,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.menuStrip1.Size = new System.Drawing.Size(764, 50);
-            this.menuStrip1.TabIndex = 128;
+            this.menuStrip1.TabIndex = 129;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem2
@@ -128,7 +115,7 @@
             // 
             // weweweweToolStripMenuItem
             // 
-            this.weweweweToolStripMenuItem.BackColor = System.Drawing.Color.SeaGreen;
+            this.weweweweToolStripMenuItem.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.weweweweToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.categoryToolStripMenuItem});
             this.weweweweToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
@@ -267,7 +254,7 @@
             this.auditTrailStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("auditTrailStripMenuItem.Image")));
             this.auditTrailStripMenuItem.Name = "auditTrailStripMenuItem";
             this.auditTrailStripMenuItem.Size = new System.Drawing.Size(235, 26);
-            this.auditTrailStripMenuItem.Text = "History";
+            this.auditTrailStripMenuItem.Text = "Audit Logs";
             // 
             // logOutToolStripMenuItem
             // 
@@ -276,28 +263,17 @@
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.logOutToolStripMenuItem.Text = "Log Out";
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtSearch.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtSearch.Location = new System.Drawing.Point(257, 93);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(241, 29);
-            this.txtSearch.TabIndex = 115;
-            this.txtSearch.Text = "   ";
-            // 
             // dgvGrain
             // 
             this.dgvGrain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvGrain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrain.Location = new System.Drawing.Point(53, 257);
+            this.dgvGrain.Location = new System.Drawing.Point(52, 104);
             this.dgvGrain.Name = "dgvGrain";
             this.dgvGrain.ReadOnly = true;
             this.dgvGrain.RowHeadersWidth = 51;
             this.dgvGrain.RowTemplate.Height = 24;
-            this.dgvGrain.Size = new System.Drawing.Size(657, 161);
-            this.dgvGrain.TabIndex = 114;
+            this.dgvGrain.Size = new System.Drawing.Size(657, 575);
+            this.dgvGrain.TabIndex = 130;
             // 
             // label2
             // 
@@ -306,172 +282,25 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 15F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(304, 53);
+            this.label2.Location = new System.Drawing.Point(298, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 34);
-            this.label2.TabIndex = 113;
-            this.label2.Text = "Condiments";
+            this.label2.Size = new System.Drawing.Size(137, 34);
+            this.label2.TabIndex = 131;
+            this.label2.Text = "Audit Logs";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtQuantity.ForeColor = System.Drawing.Color.Black;
-            this.txtQuantity.Location = new System.Drawing.Point(79, 589);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(279, 26);
-            this.txtQuantity.TabIndex = 138;
-            // 
-            // txtUnit
-            // 
-            this.txtUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtUnit.ForeColor = System.Drawing.Color.Black;
-            this.txtUnit.Location = new System.Drawing.Point(409, 455);
-            this.txtUnit.Name = "txtUnit";
-            this.txtUnit.Size = new System.Drawing.Size(279, 26);
-            this.txtUnit.TabIndex = 137;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label8.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(77, 563);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 23);
-            this.label8.TabIndex = 136;
-            this.label8.Text = "Quantity*";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dtpShelf
-            // 
-            this.dtpShelf.Location = new System.Drawing.Point(409, 523);
-            this.dtpShelf.Name = "dtpShelf";
-            this.dtpShelf.Size = new System.Drawing.Size(280, 22);
-            this.dtpShelf.TabIndex = 135;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(405, 498);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(200, 23);
-            this.label7.TabIndex = 134;
-            this.label7.Text = "Best Before/Expiry Date*";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dtpOpening
-            // 
-            this.dtpOpening.Location = new System.Drawing.Point(81, 525);
-            this.dtpOpening.Name = "dtpOpening";
-            this.dtpOpening.Size = new System.Drawing.Size(278, 22);
-            this.dtpOpening.TabIndex = 133;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(76, 498);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 23);
-            this.label6.TabIndex = 132;
-            this.label6.Text = "Date Opened";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(406, 430);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 23);
-            this.label3.TabIndex = 131;
-            this.label3.Text = "Unit of Measurement*";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtFood
-            // 
-            this.txtFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtFood.ForeColor = System.Drawing.Color.Black;
-            this.txtFood.Location = new System.Drawing.Point(79, 456);
-            this.txtFood.Name = "txtFood";
-            this.txtFood.Size = new System.Drawing.Size(279, 26);
-            this.txtFood.TabIndex = 130;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(76, 430);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 23);
-            this.label5.TabIndex = 129;
-            this.label5.Text = "Item Name*";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.BackColor = System.Drawing.Color.White;
-            this.btnRemove.ForeColor = System.Drawing.Color.Black;
-            this.btnRemove.Location = new System.Drawing.Point(240, 634);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(125, 32);
-            this.btnRemove.TabIndex = 162;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = false;
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.BackColor = System.Drawing.Color.White;
-            this.btnInsert.ForeColor = System.Drawing.Color.Black;
-            this.btnInsert.Location = new System.Drawing.Point(388, 634);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(125, 32);
-            this.btnInsert.TabIndex = 161;
-            this.btnInsert.Text = "Insert";
-            this.btnInsert.UseVisualStyleBackColor = false;
-            // 
-            // Condiments
+            // AuditLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(764, 714);
-            this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.btnInsert);
-            this.Controls.Add(this.txtQuantity);
-            this.Controls.Add(this.txtUnit);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.dtpShelf);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.dtpOpening);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtFood);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.dgvGrain);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.dgvGrain);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Condiments";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Waste Wise";
+            this.Name = "AuditLogs";
+            this.Text = "AuditLogs";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrain)).EndInit();
@@ -494,6 +323,9 @@
         private System.Windows.Forms.ToolStripMenuItem proteinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vegetablesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fruitsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem condimentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem drinksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem foodwasteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
@@ -504,23 +336,7 @@
         private System.Windows.Forms.ToolStripMenuItem termsAndConditionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem auditTrailStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dgvGrain;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtQuantity;
-        private System.Windows.Forms.TextBox txtUnit;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dtpShelf;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dtpOpening;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtFood;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.ToolStripMenuItem dishToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem condimentsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem drinksToolStripMenuItem;
     }
 }

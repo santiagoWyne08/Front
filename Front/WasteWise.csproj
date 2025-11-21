@@ -62,11 +62,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuditTrail.cs">
+    <Compile Include="AuditLogs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AuditTrail.Designer.cs">
-      <DependentUpon>AuditTrail.cs</DependentUpon>
+    <Compile Include="AuditLogs.Designer.cs">
+      <DependentUpon>AuditLogs.cs</DependentUpon>
     </Compile>
     <Compile Include="Condiments.cs">
       <SubType>Form</SubType>
@@ -179,8 +179,8 @@
     <Compile Include="Waste.Designer.cs">
       <DependentUpon>Waste.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AuditTrail.resx">
-      <DependentUpon>AuditTrail.cs</DependentUpon>
+    <EmbeddedResource Include="AuditLogs.resx">
+      <DependentUpon>AuditLogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Condiments.resx">
       <DependentUpon>Condiments.cs</DependentUpon>

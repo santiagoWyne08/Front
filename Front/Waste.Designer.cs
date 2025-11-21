@@ -99,6 +99,7 @@
             this.Quantity.HeaderText = "Name";
             this.Quantity.MinimumWidth = 6;
             this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
             this.Quantity.Width = 125;
             // 
             // Status
@@ -106,6 +107,7 @@
             this.Status.HeaderText = "Quantity";
             this.Status.MinimumWidth = 6;
             this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             this.Status.Width = 125;
             // 
             // DateDispose
@@ -113,6 +115,7 @@
             this.DateDispose.HeaderText = "Status";
             this.DateDispose.MinimumWidth = 6;
             this.DateDispose.Name = "DateDispose";
+            this.DateDispose.ReadOnly = true;
             this.DateDispose.Width = 125;
             // 
             // Column2
@@ -120,6 +123,7 @@
             this.Column2.HeaderText = "DateDispose";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Width = 125;
             // 
             // menuStrip1
@@ -335,9 +339,10 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label8);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Waste";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Waste";
+            this.Text = "Waste Wise";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

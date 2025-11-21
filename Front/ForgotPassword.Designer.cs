@@ -236,7 +236,7 @@
             this.Controls.Add(this.btnChangePass);
             this.Name = "ForgotPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ForgotPassword";
+            this.Text = "Waste Wise";
             this.ResumeLayout(false);
             this.PerformLayout();
 

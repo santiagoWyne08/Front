@@ -158,60 +158,60 @@
             this.condimentsToolStripMenuItem,
             this.drinksToolStripMenuItem});
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.categoryToolStripMenuItem.Text = "Category";
             // 
             // grainToolStripMenuItem
             // 
             this.grainToolStripMenuItem.Name = "grainToolStripMenuItem";
-            this.grainToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.grainToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.grainToolStripMenuItem.Text = "Grain";
             this.grainToolStripMenuItem.Click += new System.EventHandler(this.grainToolStripMenuItem_Click);
             // 
             // dairyToolStripMenuItem
             // 
             this.dairyToolStripMenuItem.Name = "dairyToolStripMenuItem";
-            this.dairyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dairyToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.dairyToolStripMenuItem.Text = "Dairy";
             this.dairyToolStripMenuItem.Click += new System.EventHandler(this.dairyToolStripMenuItem_Click);
             // 
             // proteinToolStripMenuItem
             // 
             this.proteinToolStripMenuItem.Name = "proteinToolStripMenuItem";
-            this.proteinToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.proteinToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.proteinToolStripMenuItem.Text = "Protein";
             this.proteinToolStripMenuItem.Click += new System.EventHandler(this.proteinToolStripMenuItem_Click);
             // 
             // vegetablesToolStripMenuItem
             // 
             this.vegetablesToolStripMenuItem.Name = "vegetablesToolStripMenuItem";
-            this.vegetablesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.vegetablesToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.vegetablesToolStripMenuItem.Text = "Vegetables";
             this.vegetablesToolStripMenuItem.Click += new System.EventHandler(this.vegetablesToolStripMenuItem_Click);
             // 
             // fruitsToolStripMenuItem
             // 
             this.fruitsToolStripMenuItem.Name = "fruitsToolStripMenuItem";
-            this.fruitsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fruitsToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.fruitsToolStripMenuItem.Text = "Fruits";
             this.fruitsToolStripMenuItem.Click += new System.EventHandler(this.fruitsToolStripMenuItem_Click);
             // 
             // dishToolStripMenuItem
             // 
             this.dishToolStripMenuItem.Name = "dishToolStripMenuItem";
-            this.dishToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dishToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.dishToolStripMenuItem.Text = "Dish";
             // 
             // condimentsToolStripMenuItem
             // 
             this.condimentsToolStripMenuItem.Name = "condimentsToolStripMenuItem";
-            this.condimentsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.condimentsToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.condimentsToolStripMenuItem.Text = "Condiments";
             // 
             // drinksToolStripMenuItem
             // 
             this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
-            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.drinksToolStripMenuItem.Text = "Drinks";
             // 
             // toolStripMenuItem5
@@ -368,7 +368,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Home";
+            this.Text = "Waste Wise";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

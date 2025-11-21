@@ -385,9 +385,10 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.ForeColor = System.Drawing.Color.DarkGreen;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Sign_Up";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sign_Up";
+            this.Text = "Waste Wise";
             this.ResumeLayout(false);
             this.PerformLayout();
 

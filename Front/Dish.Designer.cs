@@ -468,9 +468,10 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dgvGrain);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Dish";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dish";
+            this.Text = "Waste Wise";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrain)).EndInit();

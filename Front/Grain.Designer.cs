@@ -495,7 +495,7 @@
             this.Location = new System.Drawing.Point(782, 761);
             this.Name = "Grain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Grain";
+            this.Text = "Waste Wise";
             this.Load += new System.EventHandler(this.Grain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrain)).EndInit();
             this.menuStrip1.ResumeLayout(false);

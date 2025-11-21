@@ -294,9 +294,10 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Terms_and_Conditions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Terms_and_Conditions";
+            this.Text = "Waste Wise";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

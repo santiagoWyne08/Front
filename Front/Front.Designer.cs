@@ -100,7 +100,7 @@
             this.DoubleBuffered = true;
             this.Name = "Front";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrontPage";
+            this.Text = "Waste Wise";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -444,10 +444,11 @@
             this.Controls.Add(this.dgvStock);
             this.Controls.Add(this.label8);
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Location = new System.Drawing.Point(585, 761);
             this.Name = "Stock_Inventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "q";
+            this.Text = "Waste Wise";
             this.Load += new System.EventHandler(this.Stock_Inventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             this.menuStrip1.ResumeLayout(false);

@@ -43,6 +43,7 @@
             this.fruitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.condimentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.foodwasteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +56,6 @@
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvAudit = new System.Windows.Forms.DataGridView();
-            this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAudit)).BeginInit();
             this.SuspendLayout();
@@ -136,50 +136,56 @@
             this.condimentsToolStripMenuItem,
             this.drinksToolStripMenuItem});
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.categoryToolStripMenuItem.Text = "Category";
             // 
             // grainToolStripMenuItem
             // 
             this.grainToolStripMenuItem.Name = "grainToolStripMenuItem";
-            this.grainToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.grainToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.grainToolStripMenuItem.Text = "Grain";
             // 
             // dairyToolStripMenuItem
             // 
             this.dairyToolStripMenuItem.Name = "dairyToolStripMenuItem";
-            this.dairyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dairyToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.dairyToolStripMenuItem.Text = "Dairy";
             // 
             // proteinToolStripMenuItem
             // 
             this.proteinToolStripMenuItem.Name = "proteinToolStripMenuItem";
-            this.proteinToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.proteinToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.proteinToolStripMenuItem.Text = "Protein";
             // 
             // vegetablesToolStripMenuItem
             // 
             this.vegetablesToolStripMenuItem.Name = "vegetablesToolStripMenuItem";
-            this.vegetablesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.vegetablesToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.vegetablesToolStripMenuItem.Text = "Vegetables";
             // 
             // fruitsToolStripMenuItem
             // 
             this.fruitsToolStripMenuItem.Name = "fruitsToolStripMenuItem";
-            this.fruitsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fruitsToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.fruitsToolStripMenuItem.Text = "Fruits";
             // 
             // dishToolStripMenuItem
             // 
             this.dishToolStripMenuItem.Name = "dishToolStripMenuItem";
-            this.dishToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dishToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.dishToolStripMenuItem.Text = "Dish";
             // 
             // condimentsToolStripMenuItem
             // 
             this.condimentsToolStripMenuItem.Name = "condimentsToolStripMenuItem";
-            this.condimentsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.condimentsToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.condimentsToolStripMenuItem.Text = "Condiments";
+            // 
+            // drinksToolStripMenuItem
+            // 
+            this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
+            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.drinksToolStripMenuItem.Text = "Drinks";
             // 
             // toolStripMenuItem5
             // 
@@ -284,12 +290,6 @@
             this.dgvAudit.Size = new System.Drawing.Size(709, 483);
             this.dgvAudit.TabIndex = 125;
             // 
-            // drinksToolStripMenuItem
-            // 
-            this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
-            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.drinksToolStripMenuItem.Text = "Drinks";
-            // 
             // AuditTrail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -299,8 +299,9 @@
             this.Controls.Add(this.dgvAudit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AuditTrail";
-            this.Text = "History";
+            this.Text = "Waste Wise";
             this.Load += new System.EventHandler(this.AuditTrail_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

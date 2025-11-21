@@ -197,9 +197,10 @@
             this.Controls.Add(this.lblSignUp);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.DarkGreen;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Log_In";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Log_In";
+            this.Text = "Waste Wise";
             this.ResumeLayout(false);
             this.PerformLayout();
 
